@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:30:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/01 15:48:24 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/01 18:44:55 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,17 @@ static void	start_up_prompt(void)
 int	main()
 {
 	PhoneBook	phonebook;
+	std::string	command;
 
 	start_up_prompt();
 	while (1)
 	{
-		command = get_command();
-		if (command == ADD)
-
-		else if (command == SEARCH)
-
-		else if (command == EXIT)
+		std::getline(std::cin, command);
+		if (command == "ADD")
+			phonebook.add_contact();
+		else if (command == "SEARCH")
+			phonebook.search_contact();
+		else if (command == "EXIT")
 			break;
 	}
 	return 0;
