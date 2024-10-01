@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 11:38:27 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/01 15:37:40 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/10/01 14:35:13 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/10/01 15:38:48 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-using std::string;
-
-class PhoneBook
+void	PhoneBook::add_contact(void)
 {
-		Contact	contacts[8];
-		char	index;
-	public:
-		void	add_contact(void);
-		void	search_contact(void);
-		void	increment_index(void);
+
+}
+
+void	PhoneBook::search_contact(void)
+{
+
+}
+
+void	PhoneBook::increment_index(void)
+{
+	
 }
