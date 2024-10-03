@@ -6,13 +6,15 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:38:27 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/01 17:32:20 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/03 16:49:37 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "Contact.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include <iostream>
+# include <string>
+# include "Contact.hpp"
 
 class PhoneBook
 {
@@ -24,7 +26,10 @@ class PhoneBook
 		void	add_phone_number(void);
 		void	add_darkest_secret(void);
 	public:
+		PhoneBook(void);
 		void	add_contact(void);
 		void	search_contact(void);
-		void	increment_index(void);
+		void	set_index(char index);
 };
+
+#endif

@@ -6,11 +6,13 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:56:54 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/01 18:52:27 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/03 16:49:17 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+# include <string>
 
 class	Contact
 {
@@ -32,3 +34,5 @@ class	Contact
 		std::string	get_phone_number(void);
 		std::string	get_darkest_secret(void);
 };
+
+#endif
