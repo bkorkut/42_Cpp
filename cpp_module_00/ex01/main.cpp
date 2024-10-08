@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:30:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/01 18:44:55 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/06 20:43:00 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ static void	start_up_prompt(void)
 				<< "ADD         to add a contact                " << std::endl
 				<< "SEARCH      to search your contact list     " << std::endl
 				<< "EXIT        to exit your phonebook          " << std::endl
-				<< "--------------------------------------------" << std::endl
-				<< std::endl;
+				<< "--------------------------------------------" << std::endl;
 }
 
 int	main()
@@ -42,6 +41,9 @@ int	main()
 			phonebook.search_contact();
 		else if (command == "EXIT")
 			break;
+		std::cout	<< "--------------------------------------------" << std::endl
+					<< "Please enter a command (ADD, SEARCH or EXIT)"<< std::endl
+					<< "--------------------------------------------" << std::endl;
 	}
 	return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:38:27 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/03 16:49:37 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/06 20:52:10 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class PhoneBook
 		PhoneBook(void);
 		void	add_contact(void);
 		void	search_contact(void);
-		void	set_index(char index);
 };
 
 #endif
