@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:35:13 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/08 16:57:50 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/10 16:13:00 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,24 +161,24 @@ void	PhoneBook::add_darkest_secret(void)
 void	PhoneBook::add_contact(void)
 {
 
-	add_first_name();
-	add_last_name();
-	add_nickname();
-	add_phone_number();
-	add_darkest_secret();
+	this->add_first_name();
+	this->add_last_name();
+	this->add_nickname();
+	this->add_phone_number();
+	this->add_darkest_secret();
 	this->index++;
 	if (this->index > 7)
 		this->index = 0;
 }
 
-std::string	truncate(std::string str)
+std::string	truncate(const std::string &str)
 {
 	if (str.length() <= 10)
 		return(str);
 	return (str.substr(0, 9) + ".");
 }
 
-void	PhoneBook::display_contact_list(void)
+void	PhoneBook::display_contact_list(void) const
 {
 	std::cout << "Index     |First Name|Last Name |Nickname" << std::endl
 	<< "--------------------------------------------" << std::endl;
@@ -187,25 +187,30 @@ void	PhoneBook::display_contact_list(void)
 		std::cout.setf (std::ios_base::left, std::ios_base::adjustfield);
 		std::cout << std::setfill(' ') << std::setw(10) << static_cast<int>(i)
 		<< "|" << std::setfill(' ') << std::setw(10)
-		<< truncate(contacts[i].get_first_name())
+		<< truncate(this->contacts[i].get_first_name())
 		<< "|" << std::setfill(' ') << std::setw(10)
-		<< truncate(contacts[i].get_last_name())
+		<< truncate(this->contacts[i].get_last_name())
 		<< "|" << std::setfill(' ') << std::setw(10)
-		<< truncate(contacts[i].get_nickname()) << std::endl;
+		<< truncate(this->contacts[i].get_nickname()) << std::endl;
 	}
 }
 
-void	PhoneBook::display_single_contact(char index)
+void	PhoneBook::display_single_contact(char index) const
 {
 	index -= '0';
-	std::cout << contacts[index].get_first_name() << std::endl
-	<< contacts[index].get_last_name() << std::endl
-	<< contacts[index].get_nickname() << std::endl
-	<< contacts[index].get_phone_number() << std::endl
-	<< contacts[index].get_darkest_secret() << std::endl;
+	if (this->contacts[index].get_first_name().empty())
+		std::cout << "No saved contact at index" << std::endl;
+	else
+	{
+		std::cout << this->contacts[index].get_first_name() << std::endl
+		<< this->contacts[index].get_last_name() << std::endl
+		<< this->contacts[index].get_nickname() << std::endl
+		<< this->contacts[index].get_phone_number() << std::endl
+		<< this->contacts[index].get_darkest_secret() << std::endl;
+	}
 }
 
-void	PhoneBook::search_contact(void)
+void	PhoneBook::search_contact(void) const
 {
 	std::string	index;
 

@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:38:27 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/08 16:54:34 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/10 15:31:12 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class PhoneBook
 {
+	private:
 		Contact	contacts[8];
 		char	index;
 		void	add_first_name(void);
@@ -25,12 +26,12 @@ class PhoneBook
 		void	add_nickname(void);
 		void	add_phone_number(void);
 		void	add_darkest_secret(void);
-		void	display_contact_list(void);
-		void	display_single_contact(char index);
+		void	display_contact_list(void) const;
+		void	display_single_contact(char index) const;
 	public:
 		PhoneBook(void);
 		void	add_contact(void);
-		void	search_contact(void);
+		void	search_contact(void) const;
 };
 
 #endif
