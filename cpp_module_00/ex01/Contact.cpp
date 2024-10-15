@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:37:55 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/10 17:01:24 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/14 09:27:34 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
 #include <iostream>
+
 void	Contact::set_first_name(std::string first_name)
 {
 	this->first_name = first_name;
