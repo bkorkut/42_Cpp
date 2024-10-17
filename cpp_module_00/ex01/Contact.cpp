@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:37:55 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/14 09:27:34 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/17 18:12:12 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void	Contact::set_first_name(std::string first_name)
 {
 	this->first_name = first_name;
-	std::cout << "reached here" << std::endl;
 }
 
 void	Contact::set_last_name(std::string last_name)

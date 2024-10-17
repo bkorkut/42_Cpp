@@ -6,13 +6,15 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:56:54 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/10 17:00:56 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/17 18:12:55 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 # include <string>
+
+using std::string;
 
 class	Contact
 {

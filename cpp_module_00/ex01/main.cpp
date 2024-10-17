@@ -3,15 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:30:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/06 20:43:00 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/17 18:33:03 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
+
+/*
+
+CXX = c++ standart flags
+CXXFLAGS = standart flags
+
+cerr = • Unless specified otherwise, every output messages must be ended by a new-line
+character and displayed to the standard output.
+
+std::string::npos = static_cast<size_t>(-1)
+
+const at function ends allows const variabless to access
+methods (that dont change anything) the variable can't know that!
+
+*/
 
 static void	start_up_prompt(void)
 {
@@ -42,7 +57,7 @@ int	main()
 		else if (command == "EXIT")
 			break;
 		std::cout	<< "--------------------------------------------" << std::endl
-					<< "Please enter a command (ADD, SEARCH or EXIT)"<< std::endl
+					<< "Please enter a command (ADD, SEARCH or EXIT)" << std::endl
 					<< "--------------------------------------------" << std::endl;
 	}
 	return 0;
