@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:30:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/17 18:33:03 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/18 15:59:35 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 CXX = c++ standart flags
 CXXFLAGS = standart flags
 
-cerr = • Unless specified otherwise, every output messages must be ended by a new-line
-character and displayed to the standard output.
+cerr = Unless specified otherwise, every output message must end by a nl to the STANDARD OUTPUT.
 
 std::string::npos = static_cast<size_t>(-1)
 
