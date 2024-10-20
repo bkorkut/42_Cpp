@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:10:10 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/18 17:00:02 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/20 19:37:34 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie::Zombie(std::string setname) : name(setname) {}
 
 void	Zombie::announce(void)
 {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << "\033[92m" << this->name << ": BraiiiiiiinnnzzzZ...\033[0m" << std::endl;
 }
 
 void	Zombie::set_name(std::string name)
@@ -34,5 +34,5 @@ const std::string	&Zombie::get_name(void) const
 
 Zombie:: ~Zombie(void)
 {
-	std::cout << "Zombie " << this->name << " is dead" << std::endl;
+	std::cout << "\033[31mZombie " << this->name << " is dead\033[0m" << std::endl;
 }

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 13:10:13 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/20 19:55:23 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/10/20 20:25:42 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/10/20 20:33:39 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <iostream>
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int	main(void)
+#include <string>
+
+class	Weapon
 {
-	Zombie	*zombie_horde;
-	int		n = 5;
+	private:
+		std::string			type;
+	public:
+		void				set_type(std::string);
+		const std::string	&get_type(void) const;
+};
 
-	zombie_horde = zombieHorde(n, "name");
-	for (int i = 0; i < n; i++)
-		zombie_horde[i].announce();
-	delete[] zombie_horde;
-}
+#endif
