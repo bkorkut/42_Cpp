@@ -3,21 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 20:29:26 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/20 20:33:17 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/21 15:40:04 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-const std::string	&Weapon::get_type(void) const
+Weapon::Weapon(void) {}
+
+Weapon::Weapon(std::string settype) : type(settype) {}
+
+const std::string	&Weapon::getType(void) const
 {
 	return (this->type);
 }
 
-void	Weapon::set_type(std::string str)
+void	Weapon::setType(std::string str)
 {
 	this->type = str;
 }

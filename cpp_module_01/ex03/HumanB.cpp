@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 20:34:24 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/21 16:15:28 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/10/21 15:46:50 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/10/21 16:24:22 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#include <iostream>
+#include "HumanB.hpp"
 
-#include "Weapon.hpp"
+HumanB::HumanB(std::string setname) : name(setname) {}
 
-class	HumanA
+void	HumanB::setWeapon(Weapon &setweapon)
 {
-		Weapon		&weapon;
-		std::string	name;
-	public:
-					HumanA(std::string, Weapon &);
-		void		setWeapon(Weapon);
-		void		attack(void) const;
-};
+	this->weapon = &setweapon;
+}
 
-#endif
+void	HumanB::attack(void) const
+{
+	std::cout << this->name << " attacks with their " << (*(this->weapon)).getType() << std::endl;
+}
