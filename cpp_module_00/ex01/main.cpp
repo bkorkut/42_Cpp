@@ -6,26 +6,12 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:30:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/18 15:59:35 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/24 13:10:39 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
-
-/*
-
-CXX = c++ standart flags
-CXXFLAGS = standart flags
-
-cerr = Unless specified otherwise, every output message must end by a nl to the STANDARD OUTPUT.
-
-std::string::npos = static_cast<size_t>(-1)
-
-const at function ends allows const variabless to access
-methods (that dont change anything) the variable can't know that!
-
-*/
 
 static void	start_up_prompt(void)
 {

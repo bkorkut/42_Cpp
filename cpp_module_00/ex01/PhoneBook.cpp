@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:35:13 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/17 17:58:28 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/24 13:09:27 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ void	cin_error_exit(void)
 {
 	if (std::cin.eof())
 	{
-		std::cerr << "EOF encountered unexpectedly." << std::endl;
+		std::cout << "EOF encountered unexpectedly." << std::endl;
 		exit(0);
 	}
 	else if (std::cin.bad())
 	{
-		std::cerr << "Input stream error badbit ocurred." << std::endl;
+		std::cout << "Input stream error badbit ocurred." << std::endl;
 		exit(1);
 	}
 	else if (std::cin.fail())
 	{
-		std::cerr << "Input stream error failbit ocurred." << std::endl;
+		std::cout << "Input stream error failbit ocurred." << std::endl;
 		exit(1);
 	}
 }
