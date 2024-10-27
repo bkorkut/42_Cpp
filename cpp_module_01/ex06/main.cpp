@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:15:20 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/26 15:12:26 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/27 14:38:27 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,35 @@ int	main(int ac, char **av)
 {
 	Harl		harl;
 	std::string	str;
-	std::map<std::string, int> complvl;
-	int			lvl;
+	int			i = 0;
 
-	complvl["DEBUG"] = 1;
-	complvl["INFO"] = 2;
-	complvl["WARNING"] = 3;
-	complvl["ERROR"] = 4;
 	if (ac == 2)
 	{
 		str = av[1];
-		lvl = complvl[str];
-		switch (lvl)
+		while (i < 4)
 		{
-			case 1:
+			if (harl.get_level(i) == str)
+				break ;
+			i++;
+		}
+		switch (i)
+		{
+			case 0:
 				std::cout << "[ DEBUG ]" << std::endl;
 				harl.complain("DEBUG");
 				std::cout << std::endl;
-			case 2:
+				// Fall through
+			case 1:
 				std::cout << "[ INFO ]" << std::endl;
 				harl.complain("INFO");
 				std::cout << std::endl;
-			case 3:
+				// Fall through
+			case 2:
 				std::cout << "[ WARNING ]" << std::endl;
 				harl.complain("WARNING");
 				std::cout << std::endl;
-			case 4:
+				// Fall through
+			case 3:
 				std::cout << "[ ERROR ]" << std::endl;
 				harl.complain("ERROR");
 				std::cout << std::endl;
