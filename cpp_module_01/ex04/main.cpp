@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:36:53 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/30 10:32:33 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/30 11:06:41 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@
 bool
 	replace(const std::string &filename, const std::string &s1, const std::string &s2)
 {
-	std::ifstream	oldFile(filename, std::ifstream::in);
-	std::ofstream	newFile(filename + ".replace", std::ofstream::out | std::ofstream::trunc);
+	std::ifstream	oldFile;
+	std::ofstream	newFile;
 	std::string		oldString;
 	std::string		newString;
 	size_t			pos = 0;
 	size_t			foundPos;
 	char			c;
 
+	oldFile.open(filename.c_str(), std::ifstream::in);
 	if (!oldFile.is_open())
 		return (std::cout << "Failed to open the ifile: " << filename << std::endl, true);
+	newFile.open((filename + ".replace").c_str(), std::ofstream::out | std::ofstream::trunc);
 	if (!newFile.is_open())
 		return (std::cout << "Failed to open the ofile: " << filename + ".replace" << std::endl,
 			oldFile.close(), true);
