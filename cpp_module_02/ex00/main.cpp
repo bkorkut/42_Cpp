@@ -5,18 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 16:15:20 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/30 10:30:39 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/10/28 11:06:17 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/10/28 11:06:18 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
-#include <iostream>
-
-int	main(int ac, char **av)
-{
-	Harl		harl;
-
-	if (ac == 2)
-		harl.complain(av[1]);
-}

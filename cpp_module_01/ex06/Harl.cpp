@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:15:39 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/27 14:37:51 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/30 10:27:11 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,34 @@ void	Harl::complain(const std::string &level)
 	while (i < 4)
 	{
 		if (levels[i] == level)
-		{
-			(this->*functs[i])();
 			break ;
-		}
 		i++;
+	}
+	switch (i)
+	{
+		case 0:
+			std::cout << "[ DEBUG ]" << std::endl;
+			(this->*functs[0])();
+			std::cout << std::endl;
+			// Fall through
+		case 1:
+			std::cout << "[ INFO ]" << std::endl;
+			(this->*functs[1])();
+			std::cout << std::endl;
+			// Fall through
+		case 2:
+			std::cout << "[ WARNING ]" << std::endl;
+			(this->*functs[2])();
+			std::cout << std::endl;
+			// Fall through
+		case 3:
+			std::cout << "[ ERROR ]" << std::endl;
+			(this->*functs[3])();
+			std::cout << std::endl;
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break ;
 	}
 }
 

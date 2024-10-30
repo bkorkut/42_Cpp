@@ -6,44 +6,52 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:36:53 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/23 18:11:35 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/30 10:32:33 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <fstream>
-#include <sstream>
+#include <iostream>
 
-void	replace(std::string &filename, std::string &s1, std::string &s2)
+bool
+	replace(const std::string &filename, const std::string &s1, const std::string &s2)
 {
-	std::ifstream		oldFile;
-	std::ofstream		newFile;
-	std::stringstream	oldString;
-	std::string			newString;
-	size_t				pos = 0;
-	size_t				foundPos;
+	std::ifstream	oldFile(filename, std::ifstream::in);
+	std::ofstream	newFile(filename + ".replace", std::ofstream::out | std::ofstream::trunc);
+	std::string		oldString;
+	std::string		newString;
+	size_t			pos = 0;
+	size_t			foundPos;
+	char			c;
 
-	oldFile.open(filename, std::ifstream::in);
-	oldString << oldFile.rdbuf();
+	if (!oldFile.is_open())
+		return (std::cout << "Failed to open the ifile: " << filename << std::endl, true);
+	if (!newFile.is_open())
+		return (std::cout << "Failed to open the ofile: " << filename + ".replace" << std::endl,
+			oldFile.close(), true);
+	while (oldFile.get(c))
+		oldString += c;
 	oldFile.close();
 	while (true)
 	{
-		foundPos = oldString.str().find(s1, pos);
+		foundPos = oldString.find(s1, pos);
 		if (foundPos == std::string::npos)
 		{
-			newString.append(oldString.str().substr(pos));
+			newString.append(oldString.substr(pos));
 			break ;
 		}
-		newString.append(oldString.str(), pos, foundPos - pos);
+		newString.append(oldString, pos, foundPos - pos);
 		newString.append(s2);
 		pos = foundPos + s1.length();
 	}
-	newFile.open(filename + ".replace", std::ofstream::out | std::ofstream::trunc);
 	newFile << newString;
 	newFile.close();
+	return (false);
 }
 
-int	main(int ac, char **av)
+int
+	main(int ac, char **av)
 {
 	std::string	filename;
 	std::string	s1;
