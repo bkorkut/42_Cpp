@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:04:55 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/10/31 16:03:35 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/10/31 16:42:23 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,28 @@ std::ostream& operator<<(std::ostream &os, const Fixed &obj)
 	return (os);
 }
 
+void	Fixed::operator>(void);
+void	Fixed::operator<(void);
+void	Fixed::operator>=(void);
+void	Fixed::operator<=(void);
+void	Fixed::operator==(void);
+void	Fixed::operator!=(void);
+void	Fixed::operator+(void);
+void	Fixed::operator-(void);
+void	Fixed::operator*(void);
+void	Fixed::operator/(void);
+Fixed	&Fixed::operator++()
+{
+	this->fixed += 1.0 / (1 << fractional_bits);
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	old = *this;
+	operator++();
+	return (old);
+}
+
+void	Fixed::operator--(void);
+void	Fixed::operator--(void);
