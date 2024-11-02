@@ -5,27 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 15:15:58 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/02 18:15:48 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/02 20:29:51 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/02 21:17:07 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-int main( void )
+int main()
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
+	std::string	name = "Bumblebee";
+	ClapTrap	bumblebee(name);
+	bumblebee.attack("emmet");
+	bumblebee.takeDamage(5);
+	bumblebee.beRepaired(3);
+	for (int i = 9; i >= 0; i--)
+		bumblebee.attack("emmet");
+	bumblebee.takeDamage(9);
+	bumblebee.beRepaired(10);
+	bumblebee.attack("emmet");
 }

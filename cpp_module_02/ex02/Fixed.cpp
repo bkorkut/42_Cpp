@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:04:55 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/02 15:51:19 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/02 18:13:09 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,66 +78,78 @@ std::ostream& operator<<(std::ostream &os, const Fixed &obj)
 
 bool	Fixed::operator<(const Fixed &rhs) const
 {
+	std::cout << "\033[33m< operator called\033[0m" << std::endl;
 	return (this->fixed < rhs.fixed);
 }
 
 bool	Fixed::operator>(const Fixed &rhs) const
 {
-	return (*this < rhs);
+	std::cout << "\033[33m> operator called\033[0m" << std::endl;
+	return (rhs < *this);
 }
 
 bool	Fixed::operator>=(const Fixed &rhs) const
 {
+	std::cout << "\033[33m>= operator called\033[0m" << std::endl;
 	return !(*this < rhs);
 }
 
 bool	Fixed::operator<=(const Fixed &rhs) const
 {
+	std::cout << "\033[33m<= operator called\033[0m" << std::endl;
 	return !(*this > rhs);
 }
 
 bool	Fixed::operator==(const Fixed &rhs) const
 {
+	std::cout << "\033[33m== operator called\033[0m" << std::endl;
 	return (this->fixed == rhs.fixed);
 }
 
 bool	Fixed::operator!=(const Fixed &rhs) const
 {
+	std::cout << "\033[33m!= operator called\033[0m" << std::endl;
 	return !(*this == rhs);
 }
 
 Fixed	Fixed::operator+(const Fixed &rhs) const
 {
+	std::cout << "\033[33m+ operator called\033[0m" << std::endl;
 	Fixed	tmp(this->toFloat() + rhs.toFloat());
 	return (tmp);
 }
 
 Fixed	Fixed::operator-(const Fixed &rhs) const
 {
+	std::cout << "\033[33m- operator called\033[0m" << std::endl;
 	Fixed	tmp(this->toFloat() - rhs.toFloat());
 	return (tmp);
 }
 
 Fixed	Fixed::operator*(const Fixed &rhs) const
 {
+	std::cout << "\033[33m* operator called\033[0m" << std::endl;
 	Fixed	tmp(this->toFloat() * rhs.toFloat());
 	return (tmp);
 }
 
 Fixed	Fixed::operator/(const Fixed &rhs) const
 {
+	std::cout << "\033[33m/ operator called\033[0m" << std::endl;
 	Fixed	tmp(this->toFloat() / rhs.toFloat());
 	return (tmp);
 }
 
 Fixed	&Fixed::operator++(void)
 {
+	std::cout << "\033[33mprefix increment operator called\033[0m" << std::endl;
 	this->fixed++;
 	return (*this);
 }
 
 Fixed	Fixed::operator++(int)
 {
+	std::cout << "\033[33mpostfix increment operator called\033[0m" << std::endl;
 	Fixed	old = *this;
 	operator++();
 	return (old);
@@ -145,40 +157,49 @@ Fixed	Fixed::operator++(int)
 
 Fixed	&Fixed::operator--(void)
 {
+	std::cout << "\033[33mprefix decrement operator called\033[0m" << std::endl;
 	this->fixed--;
 	return (*this);
 }
 
 Fixed	Fixed::operator--(int)
 {
+	std::cout << "\033[33mpostfix decrement operator called\033[0m" << std::endl;
 	Fixed	old = *this;
 	operator--();
 	return (old);
 }
 
-static Fixed	Fixed::&min(Fixed &lhs, Fixed &rhs);
+Fixed	&Fixed::min(Fixed &lhs, Fixed &rhs)
 {
-	return (lhs);
-}
-
-static	const Fixed Fixed::&min(const Fixed &lhs, const Fixed &rhs);
-{
+	std::cout << "\033[33mmin static member function called\033[0m" << std::endl;
 	if (lhs < rhs)
 		return (lhs);
 	else
 		return (rhs);
 }
 
-static	Fixed Fixed::&max(Fixed &lhs, Fixed &rhs);
+const Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs)
 {
+	std::cout << "\033[33mconst min static member function called\033[0m" << std::endl;
+	if (lhs < rhs)
+		return (lhs);
+	else
+		return (rhs);
+}
+
+Fixed &Fixed::max(Fixed &lhs, Fixed &rhs)
+{
+	std::cout << "\033[33mmax static member function called\033[0m" << std::endl;
 	if (lhs > rhs)
 		return (lhs);
 	else
 		return (rhs);
 }
 
-static	const Fixed::Fixed &max(const Fixed &lhs, const Fixed &rhs);
+const Fixed	&Fixed::max(const Fixed &lhs, const Fixed &rhs)
 {
+	std::cout << "\033[33mconst max static member function called\033[0m" << std::endl;
 	if (lhs > rhs)
 		return (lhs);
 	else

@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 15:15:58 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/02 18:15:48 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/02 21:37:14 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/02 21:40:15 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-int main( void )
+# include <string>
+# include "ClapTrap.hpp"
+
+class	ScavTrap : public ClapTrap
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	public:
+				ScavTrap(std::string &name);
+				ScavTrap(const ScavTrap &);
+				ScavTrap &operator=(const ScavTrap &);
+				~ScavTrap(void);
+		void	attack(const std::string& target);
+};
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
-}
+#endif

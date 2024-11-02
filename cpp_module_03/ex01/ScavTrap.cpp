@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 15:15:58 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/02 18:15:48 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/02 21:37:11 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/02 21:42:03 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
 
-int main( void )
+ScavTrap::ScavTrap(std::string &name)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
-
-	return 0;
 }
+
+ScavTrap::ScavTrap(const ScavTrap &)
+{
+
+}
+
+ScavTrap::ScavTrap &operator=(const ScavTrap &)
+{
+
+}
+
+ScavTrap::~ScavTrap(void)
+{
+
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+
+}
+
