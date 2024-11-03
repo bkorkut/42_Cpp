@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 20:29:51 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:08:37 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/03 11:28:33 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/03 11:37:17 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main()
+DiamondTrap::DiamondTrap(void) {}
+
+DiamondTrap::DiamondTrap(std::string &name) : name(name)
 {
-	std::string	name = "Bumblebee";
-	ClapTrap	bumblebee(name);
+	
+}
 
-	bumblebee.attack("emmet");
-	bumblebee.takeDamage(5);
-	bumblebee.beRepaired(3);
-	for (int i = 9; i >= 0; i--)
-		bumblebee.attack("emmet");
-	bumblebee.takeDamage(9);
-	bumblebee.beRepaired(10);
-	bumblebee.attack("emmet");
+DiamondTrap::DiamondTrap(const DiamondTrap &)
+{
+
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &)
+{
+
+}
+
+DiamondTrap::~DiamondTrap(void)
+{
+
+}
+
+void	DiamondTrap::whoAmI(void)
+{
+
 }
