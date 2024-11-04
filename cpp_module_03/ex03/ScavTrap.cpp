@@ -6,14 +6,12 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:37:11 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:14:49 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:05:57 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
-
-ScavTrap::ScavTrap(void) {}
 
 ScavTrap::ScavTrap(std::string &name) : ClapTrap(name)
 {

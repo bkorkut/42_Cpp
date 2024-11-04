@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:28:37 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:34:58 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:13:25 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class	DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
-				std::string	name;
 				DiamondTrap(void);
+				std::string	name;
 	public:
 				DiamondTrap(std::string &name);
 				DiamondTrap(const DiamondTrap &);

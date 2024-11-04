@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:12:37 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:24:24 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:09:16 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class	FragTrap : public ClapTrap
+class	FragTrap : virtual public ClapTrap
 {
-	private:
+	protected:
 				FragTrap(void);
 	public:
 				FragTrap(std::string &name);

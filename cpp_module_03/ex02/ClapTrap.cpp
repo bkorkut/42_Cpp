@@ -6,14 +6,12 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 18:44:35 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 10:58:13 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:09:50 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
-
-ClapTrap::ClapTrap(void) {}
 
 ClapTrap::ClapTrap(std::string &name) : name(name), hP(10), eP(10), aD(0)
 {

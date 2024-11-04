@@ -6,14 +6,12 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:12:39 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:25:33 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:09:55 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "FragTrap.hpp"
-
-FragTrap::FragTrap(void) {}
 
 FragTrap::FragTrap(std::string &name) : ClapTrap(name)
 {

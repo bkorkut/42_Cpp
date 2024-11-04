@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:37:14 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:14:24 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:09:11 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class	ScavTrap : public ClapTrap
+class	ScavTrap : virtual public ClapTrap
 {
 	private:
 				ScavTrap(void);

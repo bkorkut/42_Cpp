@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 18:44:33 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:15:47 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:09:46 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 
 class	ClapTrap
 {
+	private:
+				ClapTrap(void);
 	protected:
 		std::string		name;
 		unsigned int	hP;
 		unsigned int	eP;
 		unsigned int	aD;
-		ClapTrap(void);
 	public:
 				ClapTrap(std::string &name);
 				ClapTrap(const ClapTrap &);
