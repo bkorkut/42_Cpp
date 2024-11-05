@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:12:37 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/04 18:09:16 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/05 16:51:07 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 
 class	FragTrap : virtual public ClapTrap
 {
-	protected:
-				FragTrap(void);
 	public:
-				FragTrap(std::string &name);
+				FragTrap(void);
+				FragTrap(std::string &);
 				FragTrap(const FragTrap &);
 				FragTrap &operator=(const FragTrap &);
 				~FragTrap(void);

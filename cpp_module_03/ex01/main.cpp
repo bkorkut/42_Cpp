@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:37:09 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/03 11:08:50 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/05 17:08:57 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ int main()
 	Wall_e.attack("unikitty");
 	Wall_e.takeDamage(5);
 	Wall_e.beRepaired(3);
-	for (int i = 9; i >= 0; i--)
-		Wall_e.attack("unikitty");
 	Wall_e.takeDamage(9);
 	Wall_e.beRepaired(10);
+	Wall_e.guardGate();
 	Wall_e.attack("unikitty");
 }

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 18:44:33 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/05 17:32:56 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/05 19:10:20 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/05 19:23:32 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include <string>
+# include "Animal.hpp"
 
-class	ClapTrap
+class	Cat : public Animal
 {
-	private:
-		std::string		name;
-		unsigned int	hP;
-		unsigned int	eP;
-		unsigned int	aD;
 	public:
-						ClapTrap(void);
-						ClapTrap(std::string &);
-						ClapTrap(const ClapTrap &);
-						ClapTrap &operator=(const ClapTrap &);
-						~ClapTrap(void);
-		void			attack(const std::string&);
-		void			takeDamage(unsigned int);
-		void			beRepaired(unsigned int);
+				Cat();
+				Cat(const Cat &);
+		Cat		&operator=(const Cat &);
+				~Cat();
+		void	makeSound(void);
 };
 
 #endif

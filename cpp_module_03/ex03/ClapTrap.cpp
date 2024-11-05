@@ -6,30 +6,35 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 18:44:35 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/04 18:06:16 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/05 16:50:59 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void) : hP(10), eP(10), aD(0)
+{
+	std::cout << "\033[92mClapTrap default constructor called\033[0m" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string &name) : name(name), hP(10), eP(10), aD(0)
 {
 	std::cout << "\033[92mClapTrap name constructor called\033[0m" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &toCopy) : name(toCopy.name), hP(toCopy.hP), eP(toCopy.eP), aD(toCopy.aD)
+ClapTrap::ClapTrap(const ClapTrap &other) : name(other.name), hP(other.hP), eP(other.eP), aD(other.aD)
 {
 	std::cout << "\033[92mClapTrap copy constructor called\033[0m" << std::endl;
 }
 
-ClapTrap	&ClapTrap::operator=(const ClapTrap &toCopy)
+ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
 {
 	std::cout << "\033[34mClapTrap copy assignment operator called\033[0m" << std::endl;
-	this->name = toCopy.name;
-	this->hP = toCopy.hP;
-	this->eP = toCopy.eP;
-	this->aD = toCopy.aD;
+	this->name = other.name;
+	this->hP = other.hP;
+	this->eP = other.eP;
+	this->aD = other.aD;
 	return (*this);
 }
 

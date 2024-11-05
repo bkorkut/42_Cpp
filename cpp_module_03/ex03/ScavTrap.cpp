@@ -6,12 +6,20 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:37:11 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/04 18:05:57 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/05 16:51:34 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(void) : ClapTrap()
+{
+	std::cout << "\033[92mScavTrap default constructor called\033[0m" << std::endl;
+	this->hP = 100;
+	this->eP = 50;
+	this->aD = 20;
+}
 
 ScavTrap::ScavTrap(std::string &name) : ClapTrap(name)
 {
@@ -21,18 +29,18 @@ ScavTrap::ScavTrap(std::string &name) : ClapTrap(name)
 	this->aD = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &toCopy) : ClapTrap(toCopy)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
 	std::cout << "\033[92mScavTrap copy constructor called\033[0m" << std::endl;
 }
 
-ScavTrap	&ScavTrap::operator=(const ScavTrap &toCopy)
+ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 {
 	std::cout << "\033[34mScavTrap copy assignment operator called\033[0m" << std::endl;
-	this->name = toCopy.name;
-	this->hP = toCopy.hP;
-	this->eP = toCopy.eP;
-	this->aD = toCopy.aD;
+	this->name = other.name;
+	this->hP = other.hP;
+	this->eP = other.eP;
+	this->aD = other.aD;
 	return (*this);
 }
 

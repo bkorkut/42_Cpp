@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 11:12:37 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/05 16:41:58 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/05 19:10:16 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/05 19:27:15 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "Animal.hpp"
 
-# include <string>
-# include "ClapTrap.hpp"
-
-class	FragTrap : public ClapTrap
+Animal::Animal()
 {
-	public:
-				FragTrap(void);
-				FragTrap(std::string &);
-				FragTrap(const FragTrap &);
-				FragTrap &operator=(const FragTrap &);
-				~FragTrap(void);
-		void	highFivesGuys(void);
-};
 
-#endif
+}
+
+Animal::Animal(const Animal &other)
+{
+
+}
+
+Animal	&Animal::operator=(const Animal &other)
+{
+
+}
+
+Animal::~Animal()
+{
+
+}
+
+void	Animal::makeSound(void)
+{
+
+}
+
+const std::string	&getType(void)
+{
+
+}

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 18:44:33 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/05 17:32:56 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/05 19:10:13 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/05 19:27:07 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <string>
 
-class	ClapTrap
+class	Animal
 {
-	private:
-		std::string		name;
-		unsigned int	hP;
-		unsigned int	eP;
-		unsigned int	aD;
+	protected:
+		std::string	type;
 	public:
-						ClapTrap(void);
-						ClapTrap(std::string &);
-						ClapTrap(const ClapTrap &);
-						ClapTrap &operator=(const ClapTrap &);
-						~ClapTrap(void);
-		void			attack(const std::string&);
-		void			takeDamage(unsigned int);
-		void			beRepaired(unsigned int);
+							Animal();
+							Animal(const Animal &);
+		Animal				&operator=(const Animal &);
+							~Animal();
+		void				makeSound(void);
+		const std::string	&getType(void)
 };
 
 #endif
