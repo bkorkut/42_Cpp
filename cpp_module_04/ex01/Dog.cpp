@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:24 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/06 15:47:25 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/06 17:45:28 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Dog::Dog() : Animal()
 {
 	std::cout << "\33[92mDog default constructor called\33[0m" << std::endl;
 	this->type = "Dog";
+	this->brain = new Brain();
 }
 
 Dog::Dog(const Dog &other) : Animal()
@@ -35,6 +36,7 @@ Dog	&Dog::operator=(const Dog &other)
 Dog::~Dog()
 {
 	std::cout << "\33[31mDog destructor called\33[0m" << std::endl;
+	delete brain;
 }
 
 void	Dog::makeSound(void) const

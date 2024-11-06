@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:22 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/05 19:23:42 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/06 17:35:13 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Dog : public Animal
 				Dog(const Dog &);
 		Dog		&operator=(const Dog &);
 				~Dog();
-		void	makeSound(void);
+		void	makeSound(void) const;
 };
 
 #endif

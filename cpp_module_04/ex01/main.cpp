@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 19:10:20 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/06 17:35:04 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/05 19:10:27 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/06 15:50:29 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include <iostream>
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-# include "Animal.hpp"
-
-class	Cat : public Animal
+int main()
 {
-	public:
-				Cat();
-				Cat(const Cat &);
-		Cat		&operator=(const Cat &);
-				~Cat();
-		void	makeSound(void) const;
-};
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-#endif
+	delete j; //should not create a leak
+	delete i;
+
+
+
+	return 0;
+}
