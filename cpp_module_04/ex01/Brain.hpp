@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:38:02 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/06 21:52:59 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:50:03 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	Brain
 				Brain(const Brain &);
 		Brain	&operator=(const Brain &);
 				~Brain();
+		void	showIdeas(void) const;
 };
 
 #endif

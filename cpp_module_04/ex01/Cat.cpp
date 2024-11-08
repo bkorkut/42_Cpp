@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:18 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/06 21:55:33 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:53:21 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,9 @@ Cat::~Cat()
 void	Cat::makeSound(void) const
 {
 	std::cout << "Meoww..." << std::endl;
+}
+
+void	Cat::showIdeas(void) const
+{
+	this->brain->showIdeas();
 }

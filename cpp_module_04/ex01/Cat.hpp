@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:20 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/06 17:43:51 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:48:09 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	Cat : public Animal
 		Cat		&operator=(const Cat &);
 				~Cat();
 		void	makeSound(void) const;
+		void	showIdeas(void) const;
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:24 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/06 17:45:28 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:50:57 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,9 @@ Dog::~Dog()
 void	Dog::makeSound(void) const
 {
 	std::cout << "Woof! Wof." << std::endl;
+}
+
+void	Dog::showIdeas(void) const
+{
+	this->brain->showIdeas();
 }
