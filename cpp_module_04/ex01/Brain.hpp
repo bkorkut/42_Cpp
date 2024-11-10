@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:38:02 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/08 16:50:03 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/10 20:30:23 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ class	Brain
 	private:
 		std::string	ideas[100];
 	public:
-				Brain();
-				Brain(const std::string &);
-				Brain(const Brain &);
-		Brain	&operator=(const Brain &);
-				~Brain();
-		void	showIdeas(void) const;
+							Brain();
+							Brain(const Brain &);
+		Brain				&operator=(const Brain &);
+							~Brain();
+		void				showIdeas(void) const;
+		void				setIdea(std::string, int);
+		const std::string	&getIdea(int) const;
 };
 
 #endif

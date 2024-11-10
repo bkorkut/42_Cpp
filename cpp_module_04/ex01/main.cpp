@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:27 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/08 16:54:38 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/10 21:19:11 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,34 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* c = new Dog();
+	const Animal* d = new Cat();
 
-	j->showIdeas();
-	i->showIdeas();
+	// const Cat *c = dynamic_cast<const Cat*>(d);
+	// c->getBrain().setIdea("");
 
-	delete j; //should not create a leak
-	delete i;
+	c->makeSound();
+	d->makeSound();
 
+	Cat c2;
+	Cat c3(c2);
+	std::cout << "c2 " << c2.getBrain().getIdea(0) << std::endl;
+	std::cout << "c3 " << c3.getBrain().getIdea(0) << std::endl;
+	Cat c4;
+	c2.getBrain().setIdea("Nya", 0);
+	c4 = c2;
+	std::cout << "c2 " << c2.getBrain().getIdea(0) << std::endl;
+	std::cout << "c3 " << c3.getBrain().getIdea(0) << std::endl;
+	std::cout << "c4 " << c4.getBrain().getIdea(0) << std::endl;
+	c3.getBrain().setIdea("Hey", 0);
+	c4.getBrain().setIdea("Maw", 0);
+	std::cout << "c2 " << c2.getBrain().getIdea(0) << std::endl;
+	std::cout << "c3 " << c3.getBrain().getIdea(0) << std::endl;
+	std::cout << "c4 " << c4.getBrain().getIdea(0) << std::endl;
+	delete c;
+	delete d;
+	std::cout << c4.getBrain().getIdea(0) << std::endl;
 	return 0;
+
+	// add scope to destroy c2 manually then prove that c4 still prints or sumthin
 }

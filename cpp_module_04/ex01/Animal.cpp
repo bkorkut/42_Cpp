@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:16 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/08 16:53:11 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/10 19:59:25 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ const std::string	&Animal::getType(void) const
 	return (this->type);
 }
 
+/*
 void	Animal::showIdeas(void) const
 {
 	std::cout << "No brain, no thoughts" << std::endl;
 }
+*/
