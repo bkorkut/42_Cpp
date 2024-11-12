@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:16 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/12 10:20:19 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/12 10:21:00 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal()
+AAnimal::AAnimal()
 {
-	std::cout << "\33[92mAnimal default constructor called\33[0m" << std::endl;
+	std::cout << "\33[92mAAnimal default constructor called\33[0m" << std::endl;
 }
 
-Animal::Animal(const Animal &other)
+AAnimal::AAnimal(const AAnimal &other)
 {
-	std::cout << "\33[92mAnimal copy constructor called\33[0m" << std::endl;
+	std::cout << "\33[92mAAnimal copy constructor called\33[0m" << std::endl;
 	this->type = other.type;
 }
 
-Animal	&Animal::operator=(const Animal &other)
+AAnimal	&AAnimal::operator=(const AAnimal &other)
 {
-	std::cout << "\33[34mAnimal copy assignment operator called\33[0m" << std::endl;
+	std::cout << "\33[34mAAnimal copy assignment operator called\33[0m" << std::endl;
 	this->type = other.type;
 	return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "\33[31mAnimal destructor called\33[0m" << std::endl;
+	std::cout << "\33[31mAAnimal destructor called\33[0m" << std::endl;
 }
 
-void	Animal::makeSound(void) const
+void	AAnimal::makeSound(void) const
 {
-	std::cout << "Animal noises" << std::endl;
+	std::cout << "AAnimal noises" << std::endl;
 }
 
-const std::string	&Animal::getType(void) const
+const std::string	&AAnimal::getType(void) const
 {
 	return (this->type);
 }

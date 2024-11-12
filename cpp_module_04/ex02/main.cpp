@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:27 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/12 10:10:17 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/12 14:35:21 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int main()
 {
-	const Animal *arr[4];
+	const AAnimal *arr[4];
 
 	for (int i = 0; i < 4; i++)
 	{
-		arr[i] = (i % 2 == 0) ? static_cast<const Animal *>(new Cat)
-			: static_cast<const Animal *>(new Dog);
+		arr[i] = (i % 2 == 0) ? static_cast<const AAnimal *>(new Cat)
+			: static_cast<const AAnimal *>(new Dog);
 	}
 	for (int i = 0; i < 4; i++)
 	{
@@ -29,7 +29,7 @@ int main()
 		delete arr[i];
 	}
 
-	const Animal *c = new Cat();
+	const AAnimal *c = new Cat();
 	std::cout << c->getType() << std::endl;
 
 	dynamic_cast<const Cat*>(c)->getBrain().setIdea("I don't want to set the world on fire", 0);
