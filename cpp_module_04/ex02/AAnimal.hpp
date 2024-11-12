@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:13 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/12 10:21:12 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/12 20:10:56 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define AANIMAL_HPP
 
 # include <string>
-// # include "Brain.hpp"
 
 class	AAnimal
 {

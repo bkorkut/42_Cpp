@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 19:10:20 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/06 17:35:04 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/12 17:52:06 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/12 17:52:56 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Bureaucrat.hpp"
 
-# include "Animal.hpp"
-
-class	Cat : public Animal
+int	main(void)
 {
-	public:
-				Cat();
-				Cat(const Cat &);
-		Cat		&operator=(const Cat &);
-				~Cat();
-		void	makeSound(void) const;
-};
+	Bureaucrat a;
+	Bureaucrat b;
 
-#endif
+	
+}

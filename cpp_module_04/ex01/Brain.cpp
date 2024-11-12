@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:37:53 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/10 20:30:13 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/12 20:11:44 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,6 @@ Brain	&Brain::operator=(const Brain &other)
 Brain::~Brain()
 {
 	std::cout << "\33[31mBrain destructor called\33[0m" << std::endl;
-}
-
-void	Brain::showIdeas(void) const
-{
-	for (char i = 0; i < 100; i++)
-		std::cout << this->ideas[int(i)] << std::endl;
 }
 
 void	Brain::setIdea(std::string idea, int i)

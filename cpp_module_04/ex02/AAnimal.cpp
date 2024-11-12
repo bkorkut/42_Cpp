@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 19:10:16 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/12 10:21:00 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/12 20:11:09 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ AAnimal	&AAnimal::operator=(const AAnimal &other)
 AAnimal::~AAnimal()
 {
 	std::cout << "\33[31mAAnimal destructor called\33[0m" << std::endl;
-}
-
-void	AAnimal::makeSound(void) const
-{
-	std::cout << "AAnimal noises" << std::endl;
 }
 
 const std::string	&AAnimal::getType(void) const
