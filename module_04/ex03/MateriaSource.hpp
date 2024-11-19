@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:13:40 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/13 23:23:50 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/19 14:50:03 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,13 @@
 
 class	MateriaSource : public IMateriaSource
 {
-
+	public:
+					MateriaSource();
+					MateriaSource(const MateriaSource &);
+	MateriaSource&	operator=(const MateriaSource &);
+					~MateriaSource();
+	void			learnMateria(AMateria*);
+	AMateria*		createMateria(std::string const & type);
 };
 
 #endif

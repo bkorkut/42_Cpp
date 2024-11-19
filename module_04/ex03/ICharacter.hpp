@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:43:13 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/13 23:16:44 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/19 14:03:13 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+
+# include <string>
+# include "AMateria.hpp"
 
 class ICharacter
 {
