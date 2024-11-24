@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:41:40 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/12 18:56:46 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/24 21:15:11 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,25 @@ int	Bureaucrat::getGrade(void) const
 Bureaucrat	&Bureaucrat::operator++(void)
 {
 	// throw exeptions if grade is out of range!
-	++grade;
+	--grade;
 	return *this;
 }
 
 Bureaucrat	&Bureaucrat::operator--(void)
 {
 	// throw exeptions if grade is out of range!
-	--grade;
+	++grade;
 	return *this;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade too high";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too low";
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)

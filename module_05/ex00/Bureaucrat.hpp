@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:34:09 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/12 18:44:49 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/24 21:13:09 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,23 @@
 # define BUREAUCRAT_HPP
 
 # include <string>
+#include <stdexcept>
 
 class	Bureaucrat
 {
 	private:
 		const std::string	name;
 		int					grade;
+		class	GradeTooHighException : public std::exception
+		{
+			public:
+				const char* what() const throw() override;
+		};
+		class	GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what() const throw() override;
+		};
 	public:
 							Bureaucrat(void);
 							Bureaucrat(const Bureaucrat &);
