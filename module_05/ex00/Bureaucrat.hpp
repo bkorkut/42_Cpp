@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:34:09 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/24 21:13:09 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:50:49 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ class	Bureaucrat
 		class	GradeTooHighException : public std::exception
 		{
 			public:
-				const char* what() const throw() override;
+				const char* what() const throw();
 		};
 		class	GradeTooLowException : public std::exception
 		{
 			public:
-				const char* what() const throw() override;
+				const char* what() const throw();
 		};
 	public:
 							Bureaucrat(void);
@@ -40,7 +40,11 @@ class	Bureaucrat
 		const std::string	&getName(void) const;
 		int 				getGrade() const;
 		Bureaucrat			&operator++(void);
+		Bureaucrat			operator++(int);
 		Bureaucrat			&operator--(void);
+		Bureaucrat			operator--(int);
+		Bureaucrat			operator+=(int);
+		Bureaucrat			operator-=(int);
 };
 
 std::ostream &operator<<(std::ostream &, const Bureaucrat &);

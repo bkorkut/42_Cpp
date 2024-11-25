@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:41:40 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/24 21:15:11 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:45:50 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,47 @@ int	Bureaucrat::getGrade(void) const
 
 Bureaucrat	&Bureaucrat::operator++(void)
 {
-	// throw exeptions if grade is out of range!
-	--grade;
+	if (this->grade <= 2)
+		throw GradeTooHighException();
+	--(this->grade);
 	return *this;
+}
+
+Bureaucrat	Bureaucrat::operator++(int)
+{
+	Bureaucrat old = *this;
+	operator++();
+	return old;
 }
 
 Bureaucrat	&Bureaucrat::operator--(void)
 {
-	// throw exeptions if grade is out of range!
-	++grade;
+	if (this->grade >= 149)
+		throw GradeTooLowException();
+	++(this->grade);
+	return *this;
+}
+
+Bureaucrat	Bureaucrat::operator--(int)
+{
+	Bureaucrat	old = *this;
+	operator--();
+	return old;
+}
+
+Bureaucrat	Bureaucrat::operator+=(int n)
+{
+	if (this->grade - n < 1)
+		throw GradeTooHighException();
+	this->grade -= n;
+	return *this;
+}
+
+Bureaucrat	Bureaucrat::operator-=(int n)
+{
+	if (this->grade + n > 150)
+		throw GradeTooLowException();
+	this->grade += n;
 	return *this;
 }
 
