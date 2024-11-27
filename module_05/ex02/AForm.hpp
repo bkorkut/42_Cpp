@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 09:20:39 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 13:39:28 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 13:47:06 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 class Bureaucrat;
 
-class	Form
+class	AForm
 {
 	private:
 		const std::string	name;
@@ -33,11 +33,11 @@ class	Form
 				const char* what() const throw();
 		};
 	public:
-							Form();
-							Form(const Form &);
-							Form(const std::string &, int sign, int exec);
-		Form				&operator=(const Form &);
-							~Form();
+							AForm();
+							AForm(const AForm &);
+							AForm(const std::string &, int sign, int exec);
+		AForm				&operator=(const AForm &);
+		virtual				~AForm() = 0;
 		const std::string	&getName(void) const;
 		const std::string	getSign() const;
 		int					getGradeSign(void) const;
