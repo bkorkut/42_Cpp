@@ -6,12 +6,13 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:41:40 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 09:08:28 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 11:27:57 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : name("John Doe"), grade(150)
 {
@@ -103,12 +104,25 @@ Bureaucrat	&Bureaucrat::operator-=(int n)
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade too high";
+	return "Bureaucrat grade too high";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too low";
+	return "Bureaucrat grade too low";
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name << " signed " << form.getName();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->name << " couldn't sign " << form.getName() << " because " << e.what();
+	}
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj)

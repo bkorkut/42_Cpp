@@ -6,12 +6,13 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:52:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 09:17:08 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 11:31:33 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {

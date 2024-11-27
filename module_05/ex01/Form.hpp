@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 17:34:09 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 09:06:59 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/27 09:20:39 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/27 11:16:24 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
-# include <string>
-#include <stdexcept>
+// # include "Bureaucrat.hpp"
+class Bureaucrat;
 
-class	Bureaucrat
+class	Form
 {
 	private:
 		const std::string	name;
-		int					grade;
+		bool				sign;
+		const int			gradeSign;
+		const int			gradeExec;
 		class	GradeTooHighException : public std::exception
 		{
 			public:
@@ -32,21 +34,17 @@ class	Bureaucrat
 				const char* what() const throw();
 		};
 	public:
-							Bureaucrat(void);
-							Bureaucrat(const Bureaucrat &);
-							Bureaucrat(const std::string &, int);
-		Bureaucrat			&operator=(const Bureaucrat &);
-							~Bureaucrat(void);
+							Form();
+							Form(const Form &);
+		Form				&operator=(const Form &);
+							~Form();
 		const std::string	&getName(void) const;
-		int 				getGrade() const;
-		Bureaucrat			&operator++(void);
-		Bureaucrat			operator++(int);
-		Bureaucrat			&operator--(void);
-		Bureaucrat			operator--(int);
-		Bureaucrat			&operator+=(int);
-		Bureaucrat			&operator-=(int);
+		const std::string	getSign() const;
+		int					getGradeSign(void) const;
+		int 				getGradeExec() const;
+		void				beSigned(const Bureaucrat &);
 };
 
-std::ostream &operator<<(std::ostream &, const Bureaucrat &);
+std::ostream	&operator<<(std::ostream &, const Form &);
 
 #endif

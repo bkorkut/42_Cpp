@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:34:09 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 09:06:59 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 11:23:01 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define BUREAUCRAT_HPP
 
 # include <string>
-#include <stdexcept>
+# include <stdexcept>
+
+class Form;
 
 class	Bureaucrat
 {
@@ -38,13 +40,14 @@ class	Bureaucrat
 		Bureaucrat			&operator=(const Bureaucrat &);
 							~Bureaucrat(void);
 		const std::string	&getName(void) const;
-		int 				getGrade() const;
+		int					getGrade() const;
 		Bureaucrat			&operator++(void);
 		Bureaucrat			operator++(int);
 		Bureaucrat			&operator--(void);
 		Bureaucrat			operator--(int);
 		Bureaucrat			&operator+=(int);
 		Bureaucrat			&operator-=(int);
+		void				signForm(Form &);
 };
 
 std::ostream &operator<<(std::ostream &, const Bureaucrat &);
