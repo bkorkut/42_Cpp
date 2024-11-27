@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:34:10 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 14:40:56 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:24:36 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	PresidentialPardonForm : public AForm
 								PresidentialPardonForm(const std::string);
 		PresidentialPardonForm	&operator=(const PresidentialPardonForm &);
 								~PresidentialPardonForm();
+		void					perform() const;
 };
 
 #endif

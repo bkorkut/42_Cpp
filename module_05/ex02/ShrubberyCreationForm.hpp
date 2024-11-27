@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:32:58 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 14:30:25 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:25:43 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	ShrubberyCreationForm : public AForm
 								ShrubberyCreationForm(const std::string);
 		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &);
 								~ShrubberyCreationForm();
+		void					perform() const;
 };
 
 #endif

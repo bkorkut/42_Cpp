@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:33:21 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 14:38:07 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:25:35 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	RobotomyRequestForm : public AForm
 								RobotomyRequestForm(const std::string);
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &);
 								~RobotomyRequestForm();
+		void					perform() const;
 };
 
 #endif

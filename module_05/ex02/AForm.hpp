@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 09:20:39 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 13:47:06 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:24:44 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ class	AForm
 			public:
 				const char* what() const throw();
 		};
+		class	NotSignedException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
 	public:
 							AForm();
 							AForm(const AForm &);
@@ -43,8 +48,10 @@ class	AForm
 		int					getGradeSign(void) const;
 		int 				getGradeExec() const;
 		void				beSigned(const Bureaucrat &);
+		void				execute(Bureaucrat const & executor) const;
+		virtual	void		perform() const = 0;
 };
 
-std::ostream	&operator<<(std::ostream &, const Form &);
+std::ostream	&operator<<(std::ostream &, const AForm &);
 
 #endif

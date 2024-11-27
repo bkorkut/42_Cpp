@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:33:19 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 14:39:32 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:28:01 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,9 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 	std::cout << "\033[31mRobotomyRequestForm destructor called\033[0m" << std::endl;
+}
+
+void	RobotomyRequestForm::perform() const
+{
+	// make drilling noises. inform that target has been robotomized or robotomy failed %50
 }

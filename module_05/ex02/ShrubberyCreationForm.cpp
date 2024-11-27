@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:32:55 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 14:39:03 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:27:17 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,9 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "\033[31mShrubberyCreationForm destructor called\033[0m" << std::endl;
+}
+
+void	ShrubberyCreationForm::perform() const
+{
+	// create a file and plant a tree in it
 }
