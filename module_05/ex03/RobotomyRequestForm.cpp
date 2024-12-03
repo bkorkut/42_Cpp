@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:33:19 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/12/03 14:46:38 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/12/03 14:08:50 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 {
 	std::cout << "\033[34mRobotomyRequestForm copy assignment operator called\033[0m" << std::endl;
 	this->target = other.target;
-	return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -48,10 +47,8 @@ const char* RobotomyRequestForm::RobotomyFailedException::what() const throw()
 
 void	RobotomyRequestForm::perform() const
 {
-	char	c;
-
 	std::cout << "VRRRRRRRRRRRRRRRR!" << std::endl;
-	if (!(long(&c) % 2))
+	if (!(std::time(NULL) % 2))
 		throw RobotomyFailedException();
 	std::cout << this->target << " has been robotomized successfully" << std::endl;
 }

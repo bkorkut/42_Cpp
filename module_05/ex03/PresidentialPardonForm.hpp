@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 13:33:21 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/12/03 14:05:40 by bkorkut          ###   ########.fr       */
+/*   Created: 2024/11/27 13:34:10 by bkorkut           #+#    #+#             */
+/*   Updated: 2024/11/27 16:24:36 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include "AForm.hpp"
 
-class	RobotomyRequestForm : public AForm
+class	PresidentialPardonForm : public AForm
 {
 	private:
 		std::string	target;
-		class	RobotomyFailedException : public std::exception
-		{
-			public:
-				const char* what() const throw();
-		};
 	public:
-								RobotomyRequestForm();
-								RobotomyRequestForm(const RobotomyRequestForm &);
-								RobotomyRequestForm(const std::string);
-		RobotomyRequestForm	&operator=(const RobotomyRequestForm &);
-								~RobotomyRequestForm();
+								PresidentialPardonForm();
+								PresidentialPardonForm(const PresidentialPardonForm &);
+								PresidentialPardonForm(const std::string);
+		PresidentialPardonForm	&operator=(const PresidentialPardonForm &);
+								~PresidentialPardonForm();
 		void					perform() const;
 };
 
