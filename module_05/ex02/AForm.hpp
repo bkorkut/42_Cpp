@@ -6,12 +6,14 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 09:20:39 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/11/27 16:24:44 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/12/03 16:13:19 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
+
+#include <string>
 
 class Bureaucrat;
 
