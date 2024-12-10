@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:52:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/12/03 18:05:08 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/12/10 13:44:39 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void)
 	try
 	{
 		std::cout << a;
-		b = randomIntern.makeForm("ShrubbryCreationForm", "Berndt");
+		b = randomIntern.makeForm("ShrubberyCreationForm", "Berndt");
 		std::cout << *b;
 		std::cout << (a += 149);
 		a.signForm(*b);

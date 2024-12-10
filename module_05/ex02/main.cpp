@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:52:06 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/12/03 14:43:00 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/12/10 14:59:52 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,9 @@ int	main(void)
 		std::cout << d;
 		a.signForm(d);
 		a.executeForm(d);
-		a.executeForm(d);
-		a.executeForm(d);
-		a.executeForm(d);
 		std::cout << e;
 		a.signForm(e);
-		a.executeForm(e);
 		std::cout << (a += 42);
-		a.executeForm(d);
 		a.executeForm(d);
 		a.executeForm(d);
 		a.executeForm(d);

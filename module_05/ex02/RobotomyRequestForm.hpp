@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:33:21 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/12/03 14:05:40 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/12/10 14:44:40 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	RobotomyRequestForm : public AForm
 			public:
 				const char* what() const throw();
 		};
+		static bool	seeded;
 	public:
 								RobotomyRequestForm();
 								RobotomyRequestForm(const RobotomyRequestForm &);
