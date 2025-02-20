@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:43:07 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/12/10 18:55:55 by bkorkut          ###   ########.fr       */
+/*   Updated: 2025/02/20 10:27:01 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ScalarConverter.hpp"
 #include <cmath>
+#include "ScalarConverter.hpp"
+
 /*
 ./convert 0
 char: Non displayable
@@ -31,14 +32,11 @@ float: 42.0f
 double: 42.0
 */
 
-	//ScalarConverter::convert(*av);
-	//std::cout.setf(std::ios::showpoint);
+// Static Cast
 
-#include <cstdint>
-int	main()
+int	main(int ac, char **av)
 {
-	double a = 2.3f;
-	std::cout << std::floor(a) << std::endl;
-	std::int8_t i{65};
-	std::cout << i << std::endl;
+	if (ac == 2)
+	ScalarConverter::convert(av[1]);
+	// std::cout.setf(std::ios::showpoint);
 }
