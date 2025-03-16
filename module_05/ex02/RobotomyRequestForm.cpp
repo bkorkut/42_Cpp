@@ -17,48 +17,39 @@
 
 bool	RobotomyRequestForm::seeded = false;
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("notForeverEmptyTarget")
-{
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("notForeverEmptyTarget") {
 	std::cout << "\033[92mRobotomyRequestForm constructor called\033[0m" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm("RobotomyRequestForm", 72, 45), target(other.target)
-{
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm("RobotomyRequestForm", 72, 45), target(other.target) {
 	std::cout << "\033[92mRobotomyRequestForm constructor called\033[0m" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
-{
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target) {
 	std::cout << "\033[34mRobotomyRequestForm parameter constructor called\033[0m" << std::endl;
 }
 
-RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
-{
+RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
 	std::cout << "\033[34mRobotomyRequestForm copy assignment operator called\033[0m" << std::endl;
 	this->target = other.target;
 	return *this;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm()
-{
+RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "\033[31mRobotomyRequestForm destructor called\033[0m" << std::endl;
 }
 
-const char* RobotomyRequestForm::RobotomyFailedException::what() const throw()
-{
+const char* RobotomyRequestForm::RobotomyFailedException::what() const throw() {
 	return "Robotomy failed";
 }
 
-void	RobotomyRequestForm::perform() const
-{
-	int	i;
-
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
+	AForm::execute(executor);
 	if (!seeded)
 		srand(time(0));
 	seeded = true;
-	i = rand();
-	std::cout << "VRRRRRRRRRRRRRRRR! " << i << std::endl;
-	if (!(i % 2))
+	std::cout << "VRRRRRRRRRRRRRRRR! " << std::endl;
+	if (!(rand() % 2))
 		throw RobotomyFailedException();
 	std::cout << this->target << " has been robotomized successfully" << std::endl;
 }

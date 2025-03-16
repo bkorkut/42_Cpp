@@ -15,8 +15,7 @@
 
 # include "AForm.hpp"
 
-class	PresidentialPardonForm : public AForm
-{
+class	PresidentialPardonForm : public AForm {
 	private:
 		std::string	target;
 	public:
@@ -25,7 +24,8 @@ class	PresidentialPardonForm : public AForm
 								PresidentialPardonForm(const std::string);
 		PresidentialPardonForm	&operator=(const PresidentialPardonForm &);
 								~PresidentialPardonForm();
-		void					perform() const;
+		void					execute(Bureaucrat const & executor) const;
+
 };
 
 #endif

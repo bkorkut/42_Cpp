@@ -6,7 +6,7 @@
 /*   By: bkorkut <bkorkut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 13:33:21 by bkorkut           #+#    #+#             */
-/*   Updated: 2024/12/03 14:05:40 by bkorkut          ###   ########.fr       */
+/*   Updated: 2024/12/10 14:44:40 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,21 @@
 
 # include "AForm.hpp"
 
-class	RobotomyRequestForm : public AForm
-{
+class	RobotomyRequestForm : public AForm {
 	private:
 		std::string	target;
-		class	RobotomyFailedException : public std::exception
-		{
+		class	RobotomyFailedException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
+		static bool	seeded;
 	public:
-								RobotomyRequestForm();
-								RobotomyRequestForm(const RobotomyRequestForm &);
-								RobotomyRequestForm(const std::string);
+							RobotomyRequestForm();
+							RobotomyRequestForm(const RobotomyRequestForm &);
+							RobotomyRequestForm(const std::string);
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &);
-								~RobotomyRequestForm();
-		void					perform() const;
+							~RobotomyRequestForm();
+		void				execute(Bureaucrat const & executor) const;
 };
 
 #endif

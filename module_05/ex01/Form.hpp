@@ -15,20 +15,17 @@
 
 class Bureaucrat;
 
-class	Form
-{
+class	Form {
 	private:
 		const std::string	name;
 		bool				sign;
 		const int			gradeSign;
 		const int			gradeExec;
-		class	GradeTooHighException : public std::exception
-		{
+		class	GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
-		class	GradeTooLowException : public std::exception
-		{
+		class	GradeTooLowException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
@@ -36,8 +33,8 @@ class	Form
 							Form();
 							Form(const Form &);
 							Form(const std::string &, int sign, int exec);
-		Form				&operator=(const Form &);
 							~Form();
+		Form				&operator=(const Form &);
 		const std::string	&getName(void) const;
 		const std::string	getSign() const;
 		int					getGradeSign(void) const;

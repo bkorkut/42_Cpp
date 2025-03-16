@@ -15,8 +15,8 @@
 
 int	main(void)
 {
-	Bureaucrat a;
-	Bureaucrat b;
+	Bureaucrat a("Mister A", 150);
+	Bureaucrat b("Misses B", 150);
 
 	try
 	{

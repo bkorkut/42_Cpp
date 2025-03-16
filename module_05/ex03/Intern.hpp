@@ -16,20 +16,18 @@
 #include <stdexcept>
 #include "AForm.hpp"
 
-class	Intern
-{
+class	Intern {
 	private:
 		std::string	classes[3];
-		class	NoSuchClassException : public std::exception
-		{
+		class	NoSuchClassException : public std::exception {
 			public:
 				const char*	what() const throw();
 		};
 	public:
 				Intern();
 				Intern(const Intern &);
-		Intern	&operator=(const Intern &);
 				~Intern();
+		Intern	&operator=(const Intern &);
 		AForm	*makeForm(std::string name, std::string target);
 };
 

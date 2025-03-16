@@ -14,75 +14,63 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : name("Forever Empty Form"), sign(false), gradeSign(150), gradeExec(150)
-{
+Form::Form() : name("Forever Empty Form"), sign(false), gradeSign(150), gradeExec(150) {
 	std::cout << "\033[92mForm constructor called\033[0m" << std::endl;
 }
 
-Form::Form(const std::string &name, int sign, int exec) : name(name), sign(false), gradeSign(sign), gradeExec(exec)
-{
+Form::Form(const std::string &name, int sign, int exec) : name(name), sign(false), gradeSign(sign), gradeExec(exec) {
 	std::cout << "\033[34mForm parameter constructor called\033[0m" << std::endl;
+	if (this->gradeSign < 1 || this->gradeExec < 1)
+		throw GradeTooHighException();
+	else if (this->gradeSign > 150 || this->gradeExec > 150)
+		throw GradeTooLowException();
 }
 
-Form::Form(const Form &other) : name(other.name), sign(false), gradeSign(other.gradeSign), gradeExec(other.gradeExec)
-{
+Form::Form(const Form &other) : name(other.name), sign(false), gradeSign(other.gradeSign), gradeExec(other.gradeExec) {
 	std::cout << "\033[92mForm copy constructor called\033[0m" << std::endl;
 }
 
-Form	&Form::operator=(const Form &other)
-{
+Form	&Form::operator=(const Form &other) {
 	std::cout << "\033[34mForm copy assignment operator called\033[0m" << std::endl;
 	(void)other;
 	return *this;
 }
 
-Form::~Form()
-{
+Form::~Form() {
 	std::cout << "\033[31mForm destructor called\033[0m" << std::endl;
 }
 
-const std::string	&Form::getName(void) const
-{
+const std::string	&Form::getName(void) const {
 	return this->name;
 }
 
-const std::string	Form::getSign() const
-{
-	if (sign)
-		return "signed";
-	else
-		return "unsigned";
+const std::string	Form::getSign() const {
+	return sign ? "signed" : "unsigned";
 }
 
-int	Form::getGradeSign(void) const
-{
+int	Form::getGradeSign(void) const {
 	return this->gradeSign;
 }
 
-int	Form::getGradeExec() const
-{
+int	Form::getGradeExec() const {
 	return this->gradeExec;
 }
 
-const char* Form::GradeTooHighException::what() const throw()
-{
+const char* Form::GradeTooHighException::what() const throw() {
 	return "Grade too high";
 }
 
-const char* Form::GradeTooLowException::what() const throw()
-{
+const char* Form::GradeTooLowException::what() const throw() {
 	return "Grade too low";
 }
 
-void	Form::beSigned(const Bureaucrat &bureaucrat)
-{
+void	Form::beSigned(const Bureaucrat &bureaucrat) {
 	if (bureaucrat.getGrade() > this->gradeSign)
 		throw GradeTooLowException();
 	this->sign = true;
 }
 
-std::ostream	&operator<<(std::ostream &os, const Form &form)
-{
+std::ostream	&operator<<(std::ostream &os, const Form &form) {
 	os << form.getName() << std::endl;
 	os << "Status: " << form.getSign() << std::endl;
 	os << "Grade required to sign: " << form.getGradeSign() << std::endl;

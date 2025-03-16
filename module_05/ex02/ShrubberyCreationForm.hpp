@@ -15,8 +15,7 @@
 
 # include "AForm.hpp"
 
-class	ShrubberyCreationForm : public AForm
-{
+class	ShrubberyCreationForm : public AForm {
 	private:
 		std::string	target;
 	public:
@@ -25,7 +24,7 @@ class	ShrubberyCreationForm : public AForm
 								ShrubberyCreationForm(const std::string);
 		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &);
 								~ShrubberyCreationForm();
-		void					perform() const;
+		void					execute(Bureaucrat const & executor) const;
 };
 
 #endif

@@ -17,20 +17,17 @@
 
 class Bureaucrat;
 
-class	AForm
-{
+class	AForm {
 	private:
 		const std::string	name;
 		bool				sign;
 		const int			gradeSign;
 		const int			gradeExec;
-		class	GradeTooHighException : public std::exception
-		{
+		class	GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
-		class	GradeTooLowException : public std::exception
-		{
+		class	GradeTooLowException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
@@ -43,15 +40,14 @@ class	AForm
 							AForm();
 							AForm(const AForm &);
 							AForm(const std::string &, int sign, int exec);
-		AForm				&operator=(const AForm &);
 		virtual				~AForm() = 0;
+		AForm				&operator=(const AForm &);
 		const std::string	&getName(void) const;
 		const std::string	getSign() const;
 		int					getGradeSign(void) const;
 		int 				getGradeExec() const;
 		void				beSigned(const Bureaucrat &);
-		void				execute(Bureaucrat const & executor) const;
-		virtual	void		perform() const = 0;
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream	&operator<<(std::ostream &, const AForm &);
