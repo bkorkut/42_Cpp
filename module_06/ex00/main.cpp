@@ -6,37 +6,13 @@
 /*   By: bkorkut <bkorkut@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:43:07 by bkorkut           #+#    #+#             */
-/*   Updated: 2025/02/20 10:27:01 by bkorkut          ###   ########.fr       */
+/*   Updated: 2025/03/20 18:48:30 by bkorkut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cmath>
 #include "ScalarConverter.hpp"
 
-/*
-./convert 0
-char: Non displayable
-int: 0
-float: 0.0f
-double: 0.0
-./convert nan
-char: impossible
-int: impossible
-float: nanf
-double: nan
-./convert 42.0f
-char: '*'
-int: 42
-float: 42.0f
-double: 42.0
-*/
-
-// Static Cast
-
-int	main(int ac, char **av)
-{
+int	main(int ac, char **av) {
 	if (ac == 2)
 	ScalarConverter::convert(av[1]);
-	// std::cout.setf(std::ios::showpoint);
 }

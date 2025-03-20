@@ -1,8 +1,11 @@
 #include "Serializer.hpp"
-#include "Data.hpp"
 #include <iostream>
 
-// Reintepret Cast
+struct Data
+{
+	int	num;
+		Data() : num(0) {}
+};
 
 int	main(void) {
 	Data * ptr = new Data();

@@ -56,8 +56,6 @@ void identify(Base& p) {
 	}
 }
 
-// Dynamic Cast
-
 int	main() {
 	srand(time(NULL));
 
