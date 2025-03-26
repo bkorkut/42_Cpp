@@ -31,21 +31,21 @@ void identify(Base& p) {
 	std::cout << "Reference identifier called" << std::endl;
 	try
 	{
-		dynamic_cast<A &>(p);
+		(void)dynamic_cast<A &>(p);
 		std::cout << "p: A" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		try
 		{
-			dynamic_cast<B &>(p);
+			(void)dynamic_cast<B &>(p);
 			std::cout << "p: B" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			try
 			{
-				dynamic_cast<C &>(p);
+				(void)dynamic_cast<C &>(p);
 				std::cout << "p: C" << std::endl;
 			}
 			catch(const std::exception& e)

@@ -18,6 +18,14 @@
 #include <cmath>
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter() {}
+
+ScalarConverter::ScalarConverter(const ScalarConverter &other) { (void)other; }
+
+ScalarConverter ScalarConverter::operator=(const ScalarConverter &other) { return (void)other, *this; }
+
+ScalarConverter::~ScalarConverter() {}
+
 static void	charConvert(char c) {
 	if (std::isprint(c))
 		std::cout << "char: '" << c << '\'' << std::endl;
