@@ -142,7 +142,7 @@ void	ScalarConverter::convert(std::string str)
 				std::cout << "Invalid input" << std::endl;
 		}
 	}
-	else if (str.size() > 2 && (str[0] == '+' || str[0] == '-'))
+	else if (str.size() >= 2 && (str[0] == '+' || str[0] == '-'))
 	{
 		int	sign = ',' - str[0];
 		str.erase(str.begin());
