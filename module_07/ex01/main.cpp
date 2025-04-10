@@ -2,11 +2,12 @@
 #include <cstring>
 #include <iostream>
 
-void	toupper(char &c) {
+char	toUpper(char &c) {
 	c -= 32;
+	return c;
 }
 
-void	tolower(char &c) {
+void	toLower(char &c) {
 	c += 32;
 }
 
@@ -17,7 +18,9 @@ void	ft(int &i) {
 int	main(void) {
 	char str[] = "stupidity";
 	std::cout << str << std::endl;
-	iter(str, std::strlen(str), toupper);
+	iter(str, std::strlen(str), toUpper);
+	std::cout << str << std::endl;
+	iter(str, std::strlen(str), toLower);
 	std::cout << str << std::endl;
 
 	int	arr[] = {0, 1, 2, 3, 4};
