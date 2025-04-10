@@ -5,20 +5,23 @@ int	main(int ac, char **av)
 {
 	try
 	{
-		std::string toBe;
-		if (ac != 2)
-			toBe = "default";
-		else
-			toBe = av[1];
+		std::string input;
+		input = ac == 2 ? av[1] : "default";
 
-		Array<char> array(toBe.size());
-		for (unsigned int i = 0; i < toBe.size(); i++)
-			array[i] = toBe[i];
+		Array<char> array(input.size());
+		for (unsigned int i = 0; i < input.size(); i++)
+			array[i] = input[i];
+		std::cout << array << std::endl;
+		
+		Array<char> array2(array);
+		std::cout << array2 << std::endl;
+		
 		for (unsigned int i = 0; i < array.size(); i++)
-			std::cout << array[i];
-		std::cout << std::endl;
+			array2[i] = std::toupper(array2[i]);
+		std::cout << array << std::endl;
+		std::cout << array2 << std::endl;
 
-		std::cout << array[toBe.size() + 1] << std::endl;
+		std::cout << array[input.size() + 1] << std::endl;
 	}
 	catch(const std::exception& e)
 	{
