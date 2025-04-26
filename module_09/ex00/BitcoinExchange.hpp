@@ -8,8 +8,25 @@
 class BitcoinExchange {
 	private:
 		std::map<int, float>	database;
-		class failedToOpenFile : public std::exception {
-			const char *what() const throw();
+		class couldNotOpenFile : public std::exception {
+			public:
+				const char *what() const throw();
+		};
+		class badInput : public std::exception {
+			private:
+				std::string invalidInput;
+			public:
+				badInput(const std::string &badInput) : invalidInput("bad input => " + badInput) {}
+				~badInput() throw() {}
+				const char *what() const throw();
+		};
+		class notAPositiveNumber : public std::exception {
+			public:
+				const char *what() const throw();
+		};
+		class tooLargeANumber : public std::exception {
+			public:
+				const char *what() const throw();
 		};
 
 	public:
@@ -17,7 +34,7 @@ class BitcoinExchange {
 					BitcoinExchange(const BitcoinExchange &);
 	BitcoinExchange	operator=(const BitcoinExchange &);
 					~BitcoinExchange();
-	float			getPrice(int date);
+	float			getPrice(int date, std::string str);
 	int				dateToInt(std::string date);
 	void			insert(std::string line);
 	void			display(std::string line);
