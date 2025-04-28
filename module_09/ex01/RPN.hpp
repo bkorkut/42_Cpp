@@ -3,18 +3,25 @@
 
 #include <vector>
 #include <string>
+#include <exception>
 
 class RPN {
 	private:
 		std::vector<int>	stack;
-		std::vector<char>	signs;
-
+		class notMatch : public std::exception {
+			const char *what() const throw();
+		};
+		class invalidInput : public std::exception {
+			const char *what() const throw();
+		};
 	public:
 			RPN();
 	RPN		operator=(const RPN &);
 			RPN(const RPN &);
 			~RPN();
-	void	setStacks(std::string input);
+	void	processProblem(std::string input);
+	void	doTheMath(char sign);
+
 };
 
 #endif
