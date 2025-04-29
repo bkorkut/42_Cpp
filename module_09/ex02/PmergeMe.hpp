@@ -6,8 +6,8 @@
 // template <class T>
 class PmergeMe {
 	private:
-		std::list<int> l1;
-		std::list<int> l2;
+		std::list<int> list;
+		std::list<std::pair<int, int>> mergeList;
 		PmergeMe();
 		PmergeMe(const PmergeMe &);
 		PmergeMe operator=(const PmergeMe &);
@@ -15,17 +15,13 @@ class PmergeMe {
 	public:
 						PmergeMe(std::list<int> l1);
 						~PmergeMe();
-		unsigned int	sizel1();
-		unsigned int	sizel2();
-		void			printl1();
-		void			printl2();
+		unsigned int	sizelist();
 		bool			isSorted(void);
 		void			sort3(void);
-		unsigned int	separate(void);
-		void			insert(unsigned int n);
+		void			separate(void);
+		void			fordJohnson();
 };
 
-void	fordJohnson(PmergeMe &program);
 // unsigned int	jacobsthalRecurrenceRelation(unsigned int n);
 // unsigned int	jacobsthalRecurrenceRelation(unsigned int n1, unsigned int n2);
 
