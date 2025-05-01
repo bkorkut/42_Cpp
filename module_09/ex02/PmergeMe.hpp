@@ -7,7 +7,7 @@
 class PmergeMe {
 	private:
 		std::list<int> list;
-		std::list<std::pair<int, int>> mergeList;
+		std::list<std::pair<int, int> > mergeList;
 		PmergeMe();
 		PmergeMe(const PmergeMe &);
 		PmergeMe operator=(const PmergeMe &);
@@ -17,9 +17,13 @@ class PmergeMe {
 						~PmergeMe();
 		unsigned int	sizelist();
 		bool			isSorted(void);
-		void			sort3(void);
+		//void			sort3(void);
 		void			separate(void);
 		void			fordJohnson();
+		void			jacobstalLoop(unsigned int	prevJacob, unsigned int	currJacob);
+		void			insertionLoop(void);
+		void			insertPair(std::pair<int, int> pair);
+		std::list<std::pair<int, int> >::iterator reorderMergeList();
 };
 
 // unsigned int	jacobsthalRecurrenceRelation(unsigned int n);
