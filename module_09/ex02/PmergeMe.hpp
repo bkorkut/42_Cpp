@@ -6,8 +6,11 @@
 // template <class T>
 class PmergeMe {
 	private:
-		std::list<int> list;
+		std::list<int>					list;
 		std::list<std::pair<int, int> > mergeList;
+		int								upNumber;
+		bool							unpaired;
+
 		PmergeMe();
 		PmergeMe(const PmergeMe &);
 		PmergeMe operator=(const PmergeMe &);
@@ -25,8 +28,5 @@ class PmergeMe {
 		void			insertPair(std::pair<int, int> pair);
 		std::list<std::pair<int, int> >::iterator reorderMergeList();
 };
-
-// unsigned int	jacobsthalRecurrenceRelation(unsigned int n);
-// unsigned int	jacobsthalRecurrenceRelation(unsigned int n1, unsigned int n2);
 
 #endif

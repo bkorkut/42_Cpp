@@ -13,7 +13,7 @@ static unsigned int	jacobsthalRecurrenceRelation(unsigned int n) {
 	return ret;
 }
 
-PmergeMe::PmergeMe(std::list<int> list) : list(list) {}
+PmergeMe::PmergeMe(std::list<int> list) : list(list), unpaired(false) {}
 
 PmergeMe::~PmergeMe() {}
 
@@ -32,19 +32,19 @@ bool	PmergeMe::isSorted(void) {
 }
 
 void	PmergeMe::separate(void) {
-	int	first;
 
 	for (std::list<int>::iterator it = list.begin(); it != list.end();) {
-		first = *(it++);
+		upNumber = *(it++);
 		if (it == list.end()) {
 			it = list.erase(--it);
+			unpaired = true;
 		}
-		else if (first > *it) {
-			mergeList.push_back(std::pair<int, int>(first, *it));
+		else if (upNumber > *it) {
+			mergeList.push_back(std::pair<int, int>(upNumber, *it));
 			it = list.erase(it);
 		}
 		else {
-			mergeList.push_back(std::pair<int, int>(*(it--), first));
+			mergeList.push_back(std::pair<int, int>(*(it--), upNumber));
 			it = list.erase(it);
 		}
 	}
@@ -66,18 +66,23 @@ void	PmergeMe::insertPair(std::pair<int, int> pair) {
 	}
 	if (it == list.end())
 		return ;
-
-	for (unsigned int i = __INT_MAX__; i > 1;) {
+	if (begin == 0 && end == 0)
+		return list.push_back(pair.second);
+	std::cout << "pair " << pair.first << " : " << pair.second << std::endl;
+	for (unsigned int halfPos = __INT_MAX__; (end - begin) > 1;) {
 		it = list.begin();
-		i = end - begin / 2;
-		std::advance(it, begin + i);
+		std::cout << "begin " << begin << " end " << end << std::endl;
+		halfPos = begin + (end - begin) / 2;
+		std::cout << "halfPos " << halfPos << std::endl;
+		std::advance(it, halfPos);
+		std::cout << "insertion is before " << *it << std::endl;
 		if (*it < pair.second)
-			begin += i;
+			begin = halfPos + 1;
 		else
-			end = begin + i - 1;
+			end = halfPos;
 	}
 	it = list.begin();
-	std::advance(it, begin);
+	std::advance(it, end);
 	list.insert(it, pair.second);
 }
 
@@ -131,6 +136,7 @@ void	PmergeMe::insertionLoop(void) {
 		if (listMax < currJacob) {
 			currJacob = listMax;
 			loop = !loop;
+			// insert unpaired!
 		}
 		jacobstalLoop(currJacob, prevJacob);
 		prevJacob = currJacob;
@@ -141,6 +147,8 @@ void	PmergeMe::insertionLoop(void) {
 
 void	PmergeMe::fordJohnson() {
 	std::list<std::pair<int, int> >	recursionList;
+	bool							recursionUnpaired;
+	int								recursionUpNumber;
 
 	if (isSorted())
 		return ;
@@ -150,8 +158,12 @@ void	PmergeMe::fordJohnson() {
 	else {
 		separate();
 		recursionList = mergeList;
+		recursionUnpaired = unpaired;
+		recursionUpNumber = upNumber;
 		// fordJohnson();
 		mergeList = recursionList;
+		unpaired = recursionUnpaired;
+		upNumber = recursionUpNumber;
 		insertionLoop();
 	}
 }
