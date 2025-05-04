@@ -32,7 +32,7 @@ bool	PmergeMe::isSorted(void) {
 }
 
 void	PmergeMe::separate(void) {
-
+	std::__cxx11::list<std::pair<int, int>>;
 	for (std::list<int>::iterator it = list.begin(); it != list.end();) {
 		upNumber = *(it++);
 		if (it == list.end()) {
@@ -40,11 +40,11 @@ void	PmergeMe::separate(void) {
 			unpaired = true;
 		}
 		else if (upNumber > *it) {
-			mergeList.push_back(std::pair<int, int>(upNumber, *it));
+			mergeList->push_back(std::pair<int, int>(upNumber, *it));
 			it = list.erase(it);
 		}
 		else {
-			mergeList.push_back(std::pair<int, int>(*(it--), upNumber));
+			mergeList->push_back(std::pair<int, int>(*(it--), upNumber));
 			it = list.erase(it);
 		}
 	}
@@ -67,9 +67,9 @@ void	PmergeMe::insertPair(std::pair<int, int> pair) {
 	if (it == list.end())
 		return ;
 	if (begin == 0 && end == 0)
-		return list.push_back(pair.second);
+		return list.push_front(pair.second);
 	std::cout << "pair " << pair.first << " : " << pair.second << std::endl;
-	for (unsigned int halfPos = __INT_MAX__; (end - begin) > 1;) {
+	for (unsigned int halfPos = __INT_MAX__; (end - begin) > 0;) {
 		it = list.begin();
 		std::cout << "begin " << begin << " end " << end << std::endl;
 		halfPos = begin + (end - begin) / 2;
@@ -81,6 +81,7 @@ void	PmergeMe::insertPair(std::pair<int, int> pair) {
 		else
 			end = halfPos;
 	}
+	std::cout << begin << end << std::endl;
 	it = list.begin();
 	std::advance(it, end);
 	list.insert(it, pair.second);
@@ -146,7 +147,7 @@ void	PmergeMe::insertionLoop(void) {
 }
 
 void	PmergeMe::fordJohnson() {
-	std::list<std::pair<int, int> >	recursionList;
+	std::list<std::pair<int, int> >	*recursionList;
 	bool							recursionUnpaired;
 	int								recursionUpNumber;
 
@@ -160,7 +161,7 @@ void	PmergeMe::fordJohnson() {
 		recursionList = mergeList;
 		recursionUnpaired = unpaired;
 		recursionUpNumber = upNumber;
-		// fordJohnson();
+		fordJohnson();
 		mergeList = recursionList;
 		unpaired = recursionUnpaired;
 		upNumber = recursionUpNumber;

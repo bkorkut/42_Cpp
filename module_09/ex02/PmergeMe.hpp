@@ -7,7 +7,7 @@
 class PmergeMe {
 	private:
 		std::list<int>					list;
-		std::list<std::pair<int, int> > mergeList;
+		std::list<std::pair<int, int> > *mergeList;
 		int								upNumber;
 		bool							unpaired;
 
