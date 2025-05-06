@@ -1,22 +1,22 @@
 #ifndef PMERGEME_HPP
 # define PMERGEME_HPP
 
-#include <list>
-
-// template <class T>
+template < template <typename, typename> class Container>
 class PmergeMe {
 	private:
-		std::list<int>					list;
-		std::list<std::pair<int, int> > *mergeList;
-		int								upNumber;
-		bool							unpaired;
+		Container<int, std::allocator<int>>
+				list;
+		Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >
+				*mergeList;
+		int		upNumber;
+		bool	unpaired;
 
 		PmergeMe();
 		PmergeMe(const PmergeMe &);
 		PmergeMe operator=(const PmergeMe &);
 
 	public:
-						PmergeMe(std::list<int> l1);
+						PmergeMe(Container<int, std::allocator<int> > l1);
 						~PmergeMe();
 		unsigned int	sizelist();
 		bool			isSorted(void);
