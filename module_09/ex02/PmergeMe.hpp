@@ -20,13 +20,12 @@ class PmergeMe {
 						~PmergeMe();
 		unsigned int	sizelist();
 		bool			isSorted(void);
-		//void			sort3(void);
 		void			separate(void);
 		void			fordJohnson();
 		void			jacobstalLoop(unsigned int	prevJacob, unsigned int	currJacob);
 		void			insertionLoop(void);
 		void			insertPair(std::pair<int, int> pair);
-		std::list<std::pair<int, int> >::iterator reorderMergeList();
+		void			insertUnpaired();
 };
 
 #endif
