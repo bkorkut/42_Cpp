@@ -2,6 +2,7 @@
 #include <iostream>
 #include <list>
 #include <deque>
+#include <algorithm>
 
 static unsigned int	jacobsthalRecurrenceRelation(unsigned int n) {
 	unsigned int ret;
@@ -44,7 +45,7 @@ void	PmergeMe<Container>::separate(void) {
 		std::cout << *it << ' ';
 	std::cout << std::endl << std::endl;
 
-	mergeList = new Container<int, std::allocator<std::pair<int, int> > >();
+	mergeList = new Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >();
 	unpaired = false;
 	for (typename Container<int, std::allocator<int> >::iterator it = list.begin(); it != list.end();) {
 		upNumber = *(it++);
@@ -66,7 +67,7 @@ void	PmergeMe<Container>::separate(void) {
 	for (typename Container<int, std::allocator<int> >::iterator it = list.begin(); it != list.end(); it++)
 		std::cout << *it << ' ';
 	std::cout << std::endl;
-	for (typename Container<int, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
+	for (typename Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
 		std::cout << it->first << " : " << it->second << ' ';
 	std::cout << std::endl;
 	if (unpaired)
@@ -127,7 +128,7 @@ void	PmergeMe<Container>::insertUnpaired() {
 
 template < template <typename, typename> class Container>
 void	PmergeMe<Container>::jacobsthalLoop(unsigned int currJacob, unsigned int prevJacob) {
-	typename Container<int, std::allocator<std::pair<int,int> > >::iterator it;
+	typename Container<std::pair<int, int>, std::allocator<std::pair<int,int> > >::iterator it;
 
 	for (; (currJacob != prevJacob); currJacob--) {
 		it = mergeList->begin();
@@ -139,6 +140,16 @@ void	PmergeMe<Container>::jacobsthalLoop(unsigned int currJacob, unsigned int pr
 
 bool	comparePairs(const std::pair<int, int> &first, const std::pair<int, int> &second) {
 	return (first.first < second.first);
+}
+
+template < template <typename, typename> class Container>
+void	sortMergeList(Container<std::pair<int, int>, std::allocator<std::pair<int, int> > > &list) {
+	std::sort(list.begin(), list.end(), comparePairs);
+}
+
+template <>
+void	sortMergeList<std::list>(std::list<std::pair<int, int>, std::allocator<std::pair<int, int> > > &list) {
+	list.sort(comparePairs);
 }
 
 template < template <typename, typename> class Container>
@@ -156,11 +167,11 @@ void	PmergeMe<Container>::insertionLoop(void) {
 	if (mergeList->size() == 0)
 		std::cout << "(merge list size is 0)" << std::endl;
 	std::cout << std::endl;
-	for (typename Container<int, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
+	for (typename Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
 		std::cout << it->first << " : " << it->second << ' ';
 	std::cout << std::endl;
 
-	mergeList->sort(comparePairs);
+	sortMergeList(*mergeList);
 	for (bool loop = 1; loop != 0;) {
 		currJacob = jacobsthalRecurrenceRelation(jacobsthalIndex);
 		if (listMax < currJacob) {
@@ -180,7 +191,7 @@ void	PmergeMe<Container>::insertionLoop(void) {
 	std::cout << std::endl;
 	if (mergeList->size() == 0)
 		std::cout << "(merge list size is 0)" << std::endl;
-	for (typename Container<int, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
+	for (typename Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
 		std::cout << it->first << " : " << it->second << ' ';
 
 	delete mergeList;
@@ -190,7 +201,7 @@ void	PmergeMe<Container>::insertionLoop(void) {
 template < template <typename, typename> class Container>
 void	PmergeMe<Container>::fordJohnson() {
 	std::cout << "Entered Ford Johnson" << std::endl;
-	Container<int, std::allocator<std::pair<int, int> > >	*recursionList;
+	Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >	*recursionList;
 	bool							recursionUnpaired;
 	int								recursionUpNumber;
 
