@@ -3,9 +3,13 @@
 
 RPN::RPN() {}
 
-RPN::RPN(const RPN &) {}
+RPN::RPN(const RPN &other) : stack(other.stack) {}
 
-RPN RPN::operator=(const RPN &) { return *this; }
+RPN &RPN::operator=(const RPN &other) {
+	if (this != &other)
+		stack = other.stack;
+	return *this;
+}
 
 RPN::~RPN() {}
 

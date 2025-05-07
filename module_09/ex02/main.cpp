@@ -13,9 +13,16 @@ int	main(int ac, char **av)
 			list.push_back(std::atoi(av[i]));
 			deque.push_back(std::atoi(av[i]));
 		}
+		
 		PmergeMe<std::list> p1(list);
 		PmergeMe<std::deque> p2(deque);
+
 		p1.fordJohnson();
 		p2.fordJohnson();
+
+		p1.printList();
+		std::cout << p1.size() << std::endl;
+		p2.printList();
+		std::cout << p2.size() << std::endl;
 	}
 }

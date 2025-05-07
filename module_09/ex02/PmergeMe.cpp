@@ -4,8 +4,8 @@
 #include <deque>
 #include <algorithm>
 
-static unsigned int	jacobsthalRecurrenceRelation(unsigned int n) {
-	unsigned int ret;
+static size_t	jacobsthalRecurrenceRelation(size_t n) {
+	size_t ret;
 
 	if (n == 0)
 		return 0;
@@ -17,13 +17,26 @@ static unsigned int	jacobsthalRecurrenceRelation(unsigned int n) {
 }
 
 template < template <typename, typename> class Container>
+PmergeMe<Container>::PmergeMe() {}
+
+template < template <typename, typename> class Container>
+PmergeMe<Container>::PmergeMe(const PmergeMe<Container> &other) : list(other.list) {}
+
+template < template <typename, typename> class Container>
+PmergeMe<Container> &PmergeMe<Container>::operator=(const PmergeMe<Container> &other) {
+	if (this != &other)
+		list = other.list;
+	return *this;
+}
+
+template < template <typename, typename> class Container>
 PmergeMe<Container>::PmergeMe(Container<int, std::allocator<int> > list) : list(list), unpaired(false) {}
 
 template < template <typename, typename> class Container>
 PmergeMe<Container>::~PmergeMe() {}
 
 template < template <typename, typename> class Container>
-unsigned int PmergeMe<Container>::sizelist() {
+size_t PmergeMe<Container>::size() {
 	return list.size();
 }
 
@@ -40,11 +53,6 @@ bool	PmergeMe<Container>::isSorted(void) {
 
 template < template <typename, typename> class Container>
 void	PmergeMe<Container>::separate(void) {
-	std::cout << "Separating list\n\nList before separation:" << std::endl;
-	for (typename Container<int, std::allocator<int> >::iterator it = list.begin(); it != list.end(); it++)
-		std::cout << *it << ' ';
-	std::cout << std::endl << std::endl;
-
 	mergeList = new Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >();
 	unpaired = false;
 	for (typename Container<int, std::allocator<int> >::iterator it = list.begin(); it != list.end();) {
@@ -63,22 +71,12 @@ void	PmergeMe<Container>::separate(void) {
 			it++;
 		}
 	}
-	std::cout << "List and Pairs after separation:" << std::endl;
-	for (typename Container<int, std::allocator<int> >::iterator it = list.begin(); it != list.end(); it++)
-		std::cout << *it << ' ';
-	std::cout << std::endl;
-	for (typename Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
-		std::cout << it->first << " : " << it->second << ' ';
-	std::cout << std::endl;
-	if (unpaired)
-		std::cout << "Unpaired number is " << upNumber << std::endl;
-	std::cout << std::endl << "Separation complete" << std::endl << std::endl;
 }
 
 template < template <typename, typename> class Container>
 void	PmergeMe<Container>::insertPair(std::pair<int, int> pair) {
-	unsigned int end = 0;
-	unsigned int begin = 0;
+	size_t end = 0;
+	size_t begin = 0;
 	typename Container<int, std::allocator<int> >::iterator it = list.begin();
 
 	for (; it != list.end(); it++) {
@@ -90,7 +88,7 @@ void	PmergeMe<Container>::insertPair(std::pair<int, int> pair) {
 		return ;
 	if (begin == 0 && end == 0)
 		return list.insert(list.begin(), pair.second), void();
-	for (unsigned int halfPos = __INT_MAX__; (end - begin) > 0;) {
+	for (size_t halfPos; (end - begin) > 0;) {
 		it = list.begin();
 		halfPos = begin + (end - begin) / 2;
 		std::advance(it, halfPos);
@@ -106,13 +104,13 @@ void	PmergeMe<Container>::insertPair(std::pair<int, int> pair) {
 
 template < template <typename, typename> class Container>
 void	PmergeMe<Container>::insertUnpaired() {
-	unsigned int end = list.size();
-	unsigned int begin = 0;
+	size_t end = list.size();
+	size_t begin = 0;
 	typename Container<int, std::allocator<int> >::iterator it = list.begin();
 
 	if (begin == 0 && end == 0)
 		return list.insert(list.begin(), upNumber), void();
-	for (unsigned int halfPos = __INT_MAX__; (end - begin) > 0;) {
+	for (size_t halfPos; (end - begin) > 0;) {
 		it = list.begin();
 		halfPos = begin + (end - begin) / 2;
 		std::advance(it, halfPos);
@@ -127,7 +125,7 @@ void	PmergeMe<Container>::insertUnpaired() {
 }
 
 template < template <typename, typename> class Container>
-void	PmergeMe<Container>::jacobsthalLoop(unsigned int currJacob, unsigned int prevJacob) {
+void	PmergeMe<Container>::jacobsthalLoop(size_t currJacob, size_t prevJacob) {
 	typename Container<std::pair<int, int>, std::allocator<std::pair<int,int> > >::iterator it;
 
 	for (; (currJacob != prevJacob); currJacob--) {
@@ -154,22 +152,10 @@ void	sortMergeList<std::list>(std::list<std::pair<int, int>, std::allocator<std:
 
 template < template <typename, typename> class Container>
 void	PmergeMe<Container>::insertionLoop(void) {
-	std::cout << "Inserting merge list" << std::endl;
-
 	int				jacobsthalIndex = 2;
-	unsigned int	currJacob;
-	unsigned int	prevJacob = 0;
-	unsigned int	listMax = mergeList->size();
-
-	std::cout << std::endl << "List and Pairs before insertion:" << std::endl;
-	for (typename Container<int, std::allocator<int> >::iterator it = list.begin(); it != list.end(); it++)
-		std::cout << *it << ' ';
-	if (mergeList->size() == 0)
-		std::cout << "(merge list size is 0)" << std::endl;
-	std::cout << std::endl;
-	for (typename Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
-		std::cout << it->first << " : " << it->second << ' ';
-	std::cout << std::endl;
+	size_t	currJacob;
+	size_t	prevJacob = 0;
+	size_t	listMax = mergeList->size();
 
 	sortMergeList(*mergeList);
 	for (bool loop = 1; loop != 0;) {
@@ -184,29 +170,31 @@ void	PmergeMe<Container>::insertionLoop(void) {
 		prevJacob = currJacob;
 		jacobsthalIndex++;
 	}
+	delete mergeList;
+}
 
-	std::cout << std::endl << "List and pairs after insertion:" << std::endl;
+template < template <typename, typename> class Container>
+void	PmergeMe<Container>::printList() {
 	for (typename Container<int, std::allocator<int> >::iterator it = list.begin(); it != list.end(); it++)
 		std::cout << *it << ' ';
 	std::cout << std::endl;
-	if (mergeList->size() == 0)
-		std::cout << "(merge list size is 0)" << std::endl;
-	for (typename Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
-		std::cout << it->first << " : " << it->second << ' ';
+}
 
-	delete mergeList;
-	std::cout << std::endl << "Insertion complete" << std::endl;
+template < template <typename, typename> class Container>
+void	PmergeMe<Container>::printPairs() {
+	for (typename Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >::iterator it = mergeList->begin(); it != mergeList->end(); it++)
+		std::cout << it->first << " : " << it->second << " | ";
+	std::cout << std::endl;
 }
 
 template < template <typename, typename> class Container>
 void	PmergeMe<Container>::fordJohnson() {
-	std::cout << "Entered Ford Johnson" << std::endl;
 	Container<std::pair<int, int>, std::allocator<std::pair<int, int> > >	*recursionList;
 	bool							recursionUnpaired;
 	int								recursionUpNumber;
 
 	if (isSorted())
-		return std::cout << "\nIs sorted\n\nLeaving Ford Johnson" << std::endl, void();
+		return ;
 	else {
 		separate();
 		recursionList = mergeList;
@@ -218,11 +206,6 @@ void	PmergeMe<Container>::fordJohnson() {
 		upNumber = recursionUpNumber;
 		insertionLoop();
 	}
-
-	std::cout << "List size is: " << list.size() << std::endl;
-	if (!isSorted())
-		std::cout << "Failed the sorting!!" << std::endl;
-	std::cout << "Leaving Ford Johnson" << std::endl;
 }
 
 template class PmergeMe<std::list>;

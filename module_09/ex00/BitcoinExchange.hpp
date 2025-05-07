@@ -32,7 +32,7 @@ class BitcoinExchange {
 	public:
 					BitcoinExchange();
 					BitcoinExchange(const BitcoinExchange &);
-	BitcoinExchange	operator=(const BitcoinExchange &);
+	BitcoinExchange	&operator=(const BitcoinExchange &);
 					~BitcoinExchange();
 	float			getPrice(int date, std::string str);
 	int				dateToInt(std::string date);

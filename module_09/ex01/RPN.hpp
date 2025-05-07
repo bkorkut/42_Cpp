@@ -16,7 +16,7 @@ class RPN {
 		};
 	public:
 			RPN();
-	RPN		operator=(const RPN &);
+	RPN		&operator=(const RPN &);
 			RPN(const RPN &);
 			~RPN();
 	void	processProblem(std::string input);
